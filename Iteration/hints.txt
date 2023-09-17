@@ -1,0 +1,40 @@
+No Go, var, const e := são usados para declarar variáveis, mas eles têm diferentes usos e comportamentos. 
+
+var:
+var é usado para declarar variáveis com escopo global ou local.
+A variável declarada com var pode ser reatribuída com um novo valor a qualquer momento.
+É necessário especificar explicitamente o tipo de dado da variável, como var name string.
+Pode ser usada fora de funções (escopo global) ou dentro de funções (escopo local).
+
+const:
+const é usado para declarar constantes, que são valores imutáveis e não podem ser alterados após a declaração.
+Não é necessário especificar o tipo de dado explicitamente; o tipo é inferido automaticamente.
+Geralmente usado para valores que não devem mudar ao longo do programa.
+
+:= (Declaração Curta):
+:= é usado para declarar e inicializar variáveis de forma concisa.
+O tipo de dado é inferido automaticamente com base no valor atribuído.
+Pode ser usado apenas dentro de funções (escopo local).
+A variável declarada com := tem escopo local e só é válida dentro da função em que foi declarada.
+
+Em resumo, a principal diferença entre eles é a flexibilidade e a mutabilidade das variáveis:
+var é usado para declarar variáveis mutáveis com tipo especificado.
+const é usado para declarar constantes imutáveis.
+:= é usado para declarar e inicializar variáveis de forma concisa no escopo local, com o tipo inferido automaticamente.
+
+Benchmarking em Go é o processo de medir o desempenho de funções ou partes específicas do seu código Go para avaliar quão rápido ou 
+eficiente elas são. Isso é especialmente útil quando você deseja otimizar partes críticas do seu código para melhorar o desempenho 
+geral de um programa. O pacote testing padrão em Go inclui um framework de benchmarking que permite criar benchmarks facilmente. Os 
+benchmarks são geralmente usados para:
+
+Avaliar o desempenho: Você pode usar benchmarks para determinar o quão rápido uma função ou parte do seu código é executada em diferentes 
+situações e com diferentes entradas.
+Identificar gargalos de desempenho: Ao medir o desempenho de funções ou algoritmos específicos, você pode identificar áreas do seu 
+código que são ineficientes e que podem ser alvo de otimização.
+Comparar diferentes implementações: Os benchmarks também podem ser usados para comparar o desempenho de diferentes implementações 
+de uma função ou algoritmo e escolher a melhor opção.
+Monitorar mudanças de desempenho: Quando você faz alterações no código, os benchmarks podem ajudar a garantir que essas alterações 
+não afetem negativamente o desempenho existente.
+Para criar um benchmark em Go, você pode usar funções especiais de benchmarking que seguem uma convenção de nomenclatura específica. 
+Eles começam com a palavra "Benchmark" e aceitam um argumento do tipo *testing.B. Dentro da função de benchmark, você executa o código 
+que deseja medir e usa o objeto *testing.B para controlar e registrar o tempo decorrido.
