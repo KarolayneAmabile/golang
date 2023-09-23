@@ -1,0 +1,19 @@
+Functions vs Methods
+A method is a function with a receiver; a method declaration binds an
+identifier, the method name, to a method, and associates the method with
+the receiver's base type. In other words, a method is a function associated
+with a data type (which could be created by us) that can only be invoked
+on an instance of its particular type (a function can be called in any block
+of code since it is in escope). 
+
+For function, we could call Area(Circles), where Area is our function name
+and circles our argument, a variable circle of type Circle. 
+But using methods is different. We should use circle.Area(), on this way we're
+going to access the method Area in the Circle type. 
+
+Declare a method is very similar to declare a function. The only difference
+is the syntax of the method receiver:
+func (receiverName receiverType) MethodName (arguments)
+When your method is called on a variavel of that type, you get your reference
+to its data via the receiverName variable. Futhermore, it's a convention
+in Go to have he receiver variable be the first letter of the type. 
