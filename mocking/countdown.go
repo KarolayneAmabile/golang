@@ -4,24 +4,26 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"time"
+	"time" // para usar time.Duration, por exemplo
 )
-
-const finalWord = "Go!"
-const countdownStart = 3
 
 type Sleeper interface {
 	Sleep()
 }
 
-type ConfigurableSleeper struct {
-	duration time.Duration
-	sleep    func(time.Duration)
+type ConfigurableSleeper struct { // configura interface sleeper
+	duration time.Duration       // duração da pausa
+	sleep    func(time.Duration) // sleep realiza a pausa
 }
 
+// implementamos a interface sleep e definimos a sua duração
+// Sleep agora é um método definido pelas variáveis da estrutura ConfigurableSleeper
 func (c *ConfigurableSleeper) Sleep() {
 	c.sleep(c.duration)
 }
+
+const finalWord = "Go!"
+const countdownStart = 3
 
 func Countdown(out io.Writer, sleeper Sleeper) {
 	for i := countdownStart; i > 0; i-- {
